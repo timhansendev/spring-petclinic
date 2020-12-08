@@ -40,7 +40,7 @@ pipeline {
           echo "Build container image."
           openshift.withCluster() {
             openshift.withProject('cicd') {
-              sh "oc start-build ${appName}-build --from-file=target/app.jar -n cicd --follow"
+              sh "oc start-build ${appName}-build --from-file=target/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar -n cicd --follow"
             }
           }
         }
